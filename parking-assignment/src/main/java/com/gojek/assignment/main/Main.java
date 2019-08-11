@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         AbstractCommandProcessor abstractCommandProcessor;
         if (args.length == 1) {
-            abstractCommandProcessor = new FileCommandProcessor(args[1]);
+            abstractCommandProcessor = new FileCommandProcessor(args[0]);
         } else {
             abstractCommandProcessor = new InteractiveCommandProcessor();
         }

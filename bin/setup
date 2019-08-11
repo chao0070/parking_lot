@@ -1,7 +1,45 @@
-# Add script to:
-# * Install dependencies
-# * Build/Compile
-# * Run Test Suit to validate
-#
-# After this is run, bin/parking_lot
-# should Just Work.
+#!/usr/bin/env bash
+
+# Setup PATH environment variable to have paths required by our scripts.
+PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:
+
+SCRIPT="$0"
+
+# SCRIPT may be an arbitrarily deep series of symlinks.
+# Loop until we have the concrete path.
+while [ -h "$SCRIPT" ] ; do
+	ls=`ls -ld "$SCRIPT"`
+	# Drop everything prior to ->
+	link=`expr "$ls" : '.*-> \(.*\)$'`
+	if expr "$link" : '/.*' > /dev/null; then
+		SCRIPT="$link"
+	else
+		SCRIPT=`dirname "$SCRIPT"`/"$link"
+	fi
+done
+
+# determine npm root directory
+ROOT_DIR="`dirname "$SCRIPT"`/.."
+
+ASSIGNMENT_DIR="$ROOT_DIR/parking-assignment"
+
+_check_java() {
+	if [ -n `which java` ]; then
+		echo "Found Java"
+	else
+		echo "Java not installed on system. Program can't build"
+		exit 1
+	fi
+}
+
+_do_setup() {
+	cd $ASSIGNMENT_DIR
+	ASSIGNMENT_DIR="`pwd`"
+
+	./gradlew test jar
+	ROOT_DIR="$ASSIGNMENT_DIR/.."
+	cd $ROOT_DIR
+}
+
+_check_java
+_do_setup

@@ -25,14 +25,13 @@ public class InteractiveCommandProcessor extends AbstractCommandProcessor {
                     cmd = AbstractCommandProcessor.getCommand(line);
                 } catch (CommandException ce) {
                     System.out.println(ce.getCommandError().getError());
-                    System.out.println("\n");
                     continue;
                 }
                 if (cmd.getCommandType().equals(CommandType.EXIT)) {
                     break;
                 }
                 String output = processCommand(cmd);
-                System.out.println(output + "\n");
+                System.out.println(output);
             } catch (Exception e) {
                 e.printStackTrace();
             }
