@@ -24,3 +24,15 @@ test {
     }
 }
 test.finalizedBy jacocoTestReport
+
+
+jar {
+    manifest {
+        attributes "Main-Class": "com.gojek.assignment.main.Main"
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    destinationDir = file("$rootDir/dist/")
+}
