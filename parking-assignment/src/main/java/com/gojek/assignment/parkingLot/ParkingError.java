@@ -2,8 +2,11 @@ package com.gojek.assignment.parkingLot;
 
 public enum ParkingError {
     PL_INVALID_CAPACITY("Capacity needs to be greater than 0."),
+    PL_SLOT_INVALID("The slot is invalid"),
     PL_SLOT_NOCAR("No car in slot to unpark."),
-    PL_FULL("All slots are full in parking. No place to park.");
+    PL_FULL("Sorry, parking lot is full"),
+    PL_CAR_PARKED_REG_DUB("Already a car parked with same registration number."),
+    PL_CAR_NOT_FOUND("Not found");
 
     private String error;
 
@@ -15,10 +18,4 @@ public enum ParkingError {
         return error;
     }
 
-    @Override
-    public String toString() {
-        return "ParkingError{" +
-                "error='" + error + '\'' +
-                '}';
-    }
 }

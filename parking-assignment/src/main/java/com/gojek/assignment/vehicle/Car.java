@@ -1,20 +1,15 @@
 package com.gojek.assignment.vehicle;
 
-public class Car {
-    private final int slot;
+import java.util.Objects;
 
+public class Car {
     private final String reg;
 
     private final String color;
 
-    public Car(int slot, String reg, String color) {
-        this.slot = slot;
+    public Car(String reg, String color) {
         this.reg = reg;
         this.color = color;
-    }
-
-    public int getSlot() {
-        return slot;
     }
 
     public String getReg() {
@@ -23,5 +18,19 @@ public class Car {
 
     public String getColor() {
         return color;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return reg.equals(car.reg) &&
+                color.equals(car.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(reg, color);
     }
 }

@@ -8,16 +8,6 @@ public class ParkingException extends Exception {
         this.parkingError = parkingError;
     }
 
-    public ParkingException(String message, Throwable cause, ParkingError parkingError) {
-        super(message, cause);
-        this.parkingError = parkingError;
-    }
-
-    public ParkingException(Throwable cause, ParkingError parkingError) {
-        super(cause);
-        this.parkingError = parkingError;
-    }
-
     public ParkingError getParkingError() {
         return parkingError;
     }
