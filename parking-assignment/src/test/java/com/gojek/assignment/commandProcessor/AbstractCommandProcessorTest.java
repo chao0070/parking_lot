@@ -237,6 +237,14 @@ slot_number_for_registration_number KA-01-HH-3141
         } catch (CommandException ce) {
             assertEquals(ce.getCommandError(), CommandError.CE_UNKNOW);
         }
+
+        try {
+            command = AbstractCommandProcessor.getCommand("park  White");
+        } catch (CommandException ce) {
+            assertEquals(ce.getCommandError(), CommandError.CE_INVALID_ARGS);
+        }
+
+        System.out.println("Command");
     }
 
 
