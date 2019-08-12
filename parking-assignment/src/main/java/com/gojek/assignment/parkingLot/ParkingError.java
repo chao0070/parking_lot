@@ -1,5 +1,8 @@
 package com.gojek.assignment.parkingLot;
 
+/**
+ * ParkingError encapsulates the error which can be redirected to console. Errors are self explanatory
+ */
 public enum ParkingError {
     PL_INVALID_CAPACITY("Capacity needs to be greater than 0"),
     PL_SLOT_INVALID("The slot is invalid"),

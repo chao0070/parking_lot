@@ -3,6 +3,9 @@ package com.gojek.assignment.commands;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Specification of various commands supported by our Application
+ */
 public enum CommandType {
     CREATE_PL("create_parking_lot", 1),
     PARK("park", 2),

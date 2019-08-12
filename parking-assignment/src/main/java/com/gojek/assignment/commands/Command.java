@@ -2,6 +2,9 @@ package com.gojek.assignment.commands;
 
 import java.util.List;
 
+/**
+ * This encapsulates the command received from console.
+ */
 public class Command {
     private CommandType commandType;
     private List<String> args;

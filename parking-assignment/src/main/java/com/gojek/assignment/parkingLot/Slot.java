@@ -4,6 +4,9 @@ import com.gojek.assignment.vehicle.Car;
 
 import java.util.Objects;
 
+/**
+ * DTO object to identify Slots in  parking lot. Car field is null untill parking of car
+ */
 public class Slot {
     private Integer id;
 

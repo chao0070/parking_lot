@@ -2,6 +2,9 @@ package com.gojek.assignment.vehicle;
 
 import java.util.Objects;
 
+/**
+ * DTO class to keep info about cars to be parked
+ */
 public class Car {
     private final String reg;
 

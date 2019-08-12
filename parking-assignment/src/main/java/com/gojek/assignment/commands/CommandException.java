@@ -1,5 +1,8 @@
 package com.gojek.assignment.commands;
 
+/**
+ * CommandException is a custom exception to handle various command syntax exceptions
+ */
 public class CommandException extends Exception {
     private CommandError commandError;
 

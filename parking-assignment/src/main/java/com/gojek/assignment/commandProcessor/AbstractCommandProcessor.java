@@ -11,6 +11,10 @@ import com.gojek.assignment.vehicle.Car;
 
 import java.util.*;
 
+/**
+ * Abstract class which handles the processing of command units
+ * TODO: Separate the handling of specific command into functions
+ */
 public abstract class AbstractCommandProcessor {
 
     protected ParkingLot parkingLot = null;

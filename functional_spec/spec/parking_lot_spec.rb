@@ -92,5 +92,12 @@ EOTXT
     expect(fetch_stdout(pty)).to end_with("Not found\n")
   end
 
+  it "gives error when the slot to unpark has no car" do
+    run_command(pty, "park KA-01-HH-3141 Black\n")
+    run_command(pty, "leave 1\n")
+    run_command(pty, "leave 1\n")
+    expect(fetch_stdout(pty)).to end_with("No car in slot to unpark\n")
+  end
+
   # pending "add more specs as needed"
 end

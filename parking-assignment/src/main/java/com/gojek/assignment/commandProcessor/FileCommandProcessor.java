@@ -7,6 +7,9 @@ import com.gojek.assignment.commands.CommandType;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+/**
+ * When a file is provided with a set of commands, then FileCommandProcessor is used
+ */
 public class FileCommandProcessor extends AbstractCommandProcessor {
     private String fileName;
     public FileCommandProcessor(String fileName) {

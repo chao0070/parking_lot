@@ -134,10 +134,20 @@ public class ParkingLot {
         return car;
     }
 
+    /**
+     * Gives allocated queue as status which user can convert to array and sort to display results
+     * @return
+     */
     public PriorityQueue<Slot> status() {
         return allocatedSlots;
     }
 
+    /**
+     * Identifies the slots assocuated to a color. Throws an exception if no car of that color is present in parking lot
+     * @param color
+     * @return
+     * @throws ParkingException
+     */
     private List<Slot> slotsForColor(String color) throws ParkingException {
         Set<Slot> slots = colorSlotMap.get(color);
         if (slots == null || slots.isEmpty()) {
@@ -156,6 +166,12 @@ public class ParkingLot {
         return slotList;
     }
 
+    /**
+     * Identifies the registration number of the cars with the required color. Throws an exception if no car with that color is present
+     * @param color
+     * @return
+     * @throws ParkingException
+     */
     public List<String> regNoForColor(String color) throws ParkingException {
         List<Slot> slotList = slotsForColor(color);
 
@@ -167,6 +183,12 @@ public class ParkingLot {
         return regNoList;
     }
 
+    /**
+     * For a given registration number of a car, identify the slot in which the car is present. Will throw an exception when no slot found
+     * @param regNo
+     * @return
+     * @throws ParkingException
+     */
     public Slot getSlotFromRegno(String regNo) throws ParkingException {
         Slot slot = regNoSlotMap.get(regNo);
         if (slot == null) {
@@ -175,6 +197,12 @@ public class ParkingLot {
         return slot;
     }
 
+    /**
+     * Identifies the slot numbers assocuated to a color. Throws an exception if no car of that color is present in parking lot
+     * @param color
+     * @return
+     * @throws ParkingException
+     */
     public List<Integer> slotNoForColor(String color) throws ParkingException {
         List<Slot> slotList = slotsForColor(color);
 

@@ -8,6 +8,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * When no file is provided with parking lot commands, Interactive command processor is used for command processing
+ */
 public class InteractiveCommandProcessor extends AbstractCommandProcessor {
 
     public InteractiveCommandProcessor() {
